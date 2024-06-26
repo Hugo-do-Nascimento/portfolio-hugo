@@ -2,7 +2,24 @@ import { useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { HashLink as Link } from 'react-router-hash-link'
-import { IconBrandGit, IconBrandGithub, IconSparkles, IconArrowUpRight, IconBrandHtml5, IconBrandJavascript, IconBrandCss3, IconBrandReact, IconBrandTailwind, IconBrandFigma, IconBrandNodejs } from '@tabler/icons-react'
+import { 
+  IconBrandGit, 
+  IconBrandGithub, 
+  IconSparkles, 
+  IconArrowUpRight, 
+  IconBrandHtml5, 
+  IconBrandJavascript, 
+  IconBrandCss3, 
+  IconBrandReact, 
+  IconBrandTailwind, 
+  IconBrandFigma, 
+  IconBrandNodejs,
+  IconHeadphonesFilled,
+  IconBeach,
+  IconDeviceTv,
+  IconCode,
+  IconMapSearch 
+} from '@tabler/icons-react'
 import './App.css'
 import { 
   Card,
@@ -12,13 +29,19 @@ import {
   CardHeader,
   CardFooter
 } from './components/ui/card';
+
 import Foto from "@/assets/fotohg.jpg";
+import LogoCat from "@/assets/logoUnicap.png"
+import { Label } from './components/ui/label'
+import { Input } from './components/ui/input'
+import { Button } from './components/ui/button'
+import { Textarea } from './components/ui/textarea'
 
 function App() {
 
   return (
     <Router>
-      <div className='gap-24'>
+      <div className=''>
       <section className=' flex py-8 justify-between items-center'>
         <header className=' flex items-center gap-2'>
           <IconSparkles />
@@ -38,7 +61,7 @@ function App() {
 
       {/* Sessão de Header/Title */}
       <section>
-        <div className='flex justify-between items-center'>
+        <div className='flex justify-between items-center my-8'>
           <div id='sobremim' className=' flex flex-col items-start gap-6'>
             <h2 className=' text-5xl font-bold text-secondary w-[810px] flex text-start h-auto'>Olá, meu nome é Hugo Nascimento e sou desenvolvedor front-end</h2>
             <h3 className='text-start w-[810px] h-auto'>Eu sou graduando em Sistemas para Internet e atualmente estou participando do projeto Oracle One na Alura,msmccldcm akmskmkdsc mksmdskxsm.</h3>
@@ -62,7 +85,7 @@ function App() {
       </section>
 
       {/* Sessão sobre mim  */}
-      <section className=' flex p-16 flex-col items-center gap-[10px] self-stretch bg-[#EAF2FD] w-full'>
+      <section className=' flex p-16 flex-col items-center gap-[10px] self-stretch bg-[#EAF2FD] w-full my-8'>
         <div className='flex flex-col items-start gap-4 text-start'>
           <h3 className=' font-semibold text-secondary text-3xl'>Sobre mim</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit velit, volutpat semper dignissim dictum, imperdiet ut lacus. Quisque gravida ex a mattis pretium. Suspendisse potenti. Ut semper sagittis ligula et lacinia.</p>
@@ -73,73 +96,125 @@ function App() {
 
       {/* Sessão Skills/Habilidades  */}
       <section>
-        <div id='skills'>
-          <h3 className=' font-semibold text-secondary text-3xl'>Skills</h3>
-            <div>
-            <Card>
-  <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card Description</CardDescription>
-  </CardHeader>
-  <CardContent>
-    <IconBrandGit />
-  </CardContent>
-  <CardFooter>
-    <IconBrandGithub />
-  </CardFooter>
-</Card>
-            </div>
+        <div id='skills' className='gap-6'>
+          <h3 className=' font-semibold text-secondary text-3xl mb-8'>Skills</h3>
+            <div className='flex flex-wrap grid-cols-4 gap-6 justify-center'>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBrandHtml5 className=' text-[#E34F26] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>HTML 5</p>
+                </CardFooter>
+              </Card>
 
-            <div>
-              <div>
-                <ul>
-                  <li><IconBrandHtml5 className=' text-blue-600 w-8 h-8' /></li>
-                  <li> Html 5</li>
-                </ul>
-              </div>
-            
-              <div>
-                <ul>
-                  <li><IconBrandJavascript /></li>
-                  <li> Javascript</li>
-                </ul>
-              </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBrandCss3 className=' text-[#1572B6] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>CSS</p>
+                </CardFooter>
+              </Card>
 
-              <div>
-                <ul>
-                  <li><IconBrandCss3 /></li>
-                  <li> CSS</li>
-                </ul>
-              </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBrandJavascript className=' text-[#F7DF1E] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>JavaScript</p>
+                </CardFooter>
+              </Card>
 
-              <div>
-                <ul>
-                  <li><IconBrandReact /></li>
-                  <li> React</li>
-                </ul>
-              </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBrandReact className=' text-[#61DAFB] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>React</p>
+                </CardFooter>
+              </Card>
 
-              <div>
-                <ul>
-                  <li><IconBrandNodejs /></li>
-                  <li> Node JS</li>
-                </ul>
-              </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBrandTailwind className=' text-[#06B6D4] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>Tailwind</p>
+                </CardFooter>
+              </Card>
 
-              <div>
-                <ul>
-                  <li><IconBrandTailwind /></li>
-                  <li> Tailwind CSS</li>
-                </ul>
-              </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBrandNodejs className=' text-[#339933] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>Node.js</p>
+                </CardFooter>
+              </Card>
 
-              <div>
-                <ul>
-                  <li><IconBrandFigma /></li>
-                  <li> Figma</li>
-                </ul>
-              </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBrandGit className=' text-[#F05032] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>Git</p>
+                </CardFooter>
+              </Card>
 
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBrandGithub className=' text-[#181717] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>GitHub</p>
+                </CardFooter>
+              </Card>
+
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBrandFigma className=' text-[#A259FF] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>Figma</p>
+                </CardFooter>
+              </Card>
             </div>
         </div>
       </section>
@@ -147,75 +222,100 @@ function App() {
       {/* Sessão de Hobbies  */}
       <section>
         <div id='hobbies'>
-          <h3 className=' font-semibold text-secondary text-3xl'>Hobbies</h3>
-            <div>
-              <div>
-                <ul>
-                  {/* <li><img /></li> */}
-                  <li>Ouvir músicas</li>
-                </ul>
-              </div>
+          <h3 className=' font-semibold text-secondary text-3xl my-8'>Hobbies</h3>
+          <div className='flex grid-cols-4 gap-6 justify-center '>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconHeadphonesFilled className=' text-[] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>Ouvir Músicas</p>
+                </CardFooter>
+              </Card>
 
-              <div>
-                <ul>
-                  {/* <li><img /></li> */}
-                  <li>Viajar com a família</li>
-                </ul>
-              </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconBeach className=' text-[] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary text-start'>Viajar com a Família</p>
+                </CardFooter>
+              </Card>
 
-              <div>
-                <ul>
-                  {/* <li><img /></li> */}
-                  <li>Assistir Filmes/Séries</li>
-                </ul>
-              </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconDeviceTv className=' text-[] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary text-start'>Assitir Filmes/Séries</p>
+                </CardFooter>
+              </Card>
 
-              <div>
-                <ul>
-                  {/* <li><img /></li> */}
-                  <li>Programação</li>
-                </ul>
-              </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconCode className=' text-[] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary'>Programação</p>
+                </CardFooter>
+              </Card>
 
-              <div>
-                <ul>
-                  {/* <li><img /></li> */}
-                  <li>Conhecer Culturas</li>
-                </ul>
-              </div>
-            </div>
+              <Card className='w-44'>
+                <CardHeader>
+                  <CardTitle></CardTitle>
+                  <CardDescription></CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <IconMapSearch className=' text-[] w-10 h-10' />
+                </CardContent>
+                <CardFooter>
+                  <p className=' text-base font-bold text-secondary text-start'>Conhecer Novos Lugares</p>
+                </CardFooter>
+              </Card>
+          </div>
         </div>
       </section>
 
       {/* Sessão de Historico Academico  */}
       <section>
         <div id='formacoes'>
-          <h2 className=' font-semibold text-secondary text-3xl'>Formação Acadêmica</h2>
+          <h2 className=' font-semibold text-secondary text-3xl my-8'>Formação Acadêmica</h2>
           <div>
-
-            <div>
-              <ul>
-                <li>{/* logo local de formação  */}</li>
-                <li>sistemas Para Internet</li>
-                <li>Cursando 4° Período - UNICAP</li>
-              </ul>    
-            </div>
-
-            <div>
-              <ul>
-                <li>{/* logo local de formação  */}</li>
-                <li>Formação Front-End</li>
-                <li>2024 - Alura</li>
-              </ul>    
+            <div className='flex flex-col items-start gap-4'>
+              <Card className='p-4'>
+                <CardContent>
+                  <img src={LogoCat} alt="Logo Unicap" />
+                </CardContent>
+              </Card>
+              <div  className=' text-start'>
+                <h2 className=' font-bold text-xl'>Sistemas Para Internet</h2>
+                <CardDescription className=' font-medium text-base'>Em andamento - Unicap</CardDescription>
+              </div>
             </div>
           </div>
-        </div>
+        </div>  
       </section>
 
       {/* Sessão de Experiência Profissional/Projetos  */}
       <section>
         <div id='experiencia'>
-          <h2 className=' font-semibold text-secondary text-3xl'>Experiência Prossional/Projetos</h2>
+          <h2 className=' font-semibold text-secondary text-3xl my-8'>Experiência Prossional/Projetos</h2>
           <div>
             {/* Imagemm do projeto  */}
             <div>
@@ -244,27 +344,45 @@ function App() {
        
 
       {/* Sessão de contato  */}
-      <section>
+      <section className='mt-8 bg-[#EAF2FD] p-16'>
         <div id='contato'>
           <div>
-            {/* <img>imagem de contato</img> */}
-          </div>
-          <div>
-            <h2 className=' font-semibold text-secondary text-3xl'>Contato</h2>
-            <h3>Quer entrar em contato comigo?</h3>
-            <h3>Preencha o formulário abaixo e entrarei em contato o mais rápido possível.</h3>
-            <form>
-              <input type='text' id='nome' placeholder='Nome'/>
-              <input type='email' id='email' placeholder='Email'/>
-              <input type='text' id='assunto' placeholder='Assunto'/>
-              <textarea rows='5' cols='40' id='mensagem' name='mensagem' placeholder='Sua mensagem'></textarea>
-              <button>Enviar mensagem</button>
-            </form>
+            <Card className="w-1/2 mt-8">
+              <CardHeader className="text-start">
+                <CardTitle className="mb-4">Contato</CardTitle>
+                <CardDescription>Quer entrar em contato comigo?</CardDescription>
+                <CardDescription>Preencha o formulário abaixo, e entrarei em contato o mais rápido possível.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form>
+                  <div className="grid w-full items-center gap-4">
+                    <div className="flex flex-col space-y-1.5 text-start">
+                      <Label htmlFor="name">Nome</Label>
+                      <Input type="text" id="name" placeholder="Nome" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5 text-start">
+                      <Label htmlFor="email">Email</Label>
+                      <Input type="email" id="email" placeholder="Email" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5 text-start">
+                      <Label htmlFor="assunto">Assunto</Label>
+                      <Input type="text" id="assunto" placeholder="Assunto" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <Textarea id="mensagem" placeholder="Sua mensagem" />
+                    </div>
+                  </div>
+                </form>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Button>Enviar Mensagem</Button>
+              </CardFooter>
+            </Card>
           </div>
         </div>
       </section>
 
-      <footer>
+      <footer className='p-8 flex justify-center items-center gap-[10px] text-base font-medium'>
         <div>
           <p>Desenvolvido por Hugo Nascimento</p>
           <p>2024</p>
