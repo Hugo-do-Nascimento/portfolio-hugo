@@ -29,17 +29,25 @@ import {
   CardHeader,
   CardFooter
 } from './components/ui/card';
-
-import Foto from "@/assets/fotohg.jpg";
+import { useNavigate } from 'react-router-dom'
+import DesejoItens from "@/assets/Macbook_gray.png"  
+import Foto from "@/assets/huguinho1.png";
 import LogoCat from "@/assets/logoUnicap.png"
 import { Label } from './components/ui/label'
 import { Input } from './components/ui/input'
 import { Button } from './components/ui/button'
 import { Textarea } from './components/ui/textarea'
+import video1 from './assets/video_desejo_item.mp4'
 
 function App() {
+  // const navigate = useNavigate();
+
+  // const handleClick = () => {
+  //   navigate("https://desejo-itens.vercel.app/");
+  // }
 
   return (
+
     <Router>
       <div className=''>
       <section className=' flex py-8 justify-between items-center'>
@@ -61,7 +69,7 @@ function App() {
 
       {/* Sessão de Header/Title */}
       <section>
-        <div className='flex justify-between items-center my-8'>
+        <div className='flex items-center my-8 gap-4'>
           <div id='sobremim' className=' flex flex-col items-start gap-6'>
             <h2 className=' text-5xl font-bold text-secondary w-[810px] flex text-start h-auto'>Olá, meu nome é Hugo Nascimento e sou desenvolvedor front-end</h2>
             <h3 className='text-start w-[810px] h-auto'>Eu sou graduando em Sistemas para Internet e atualmente estou participando do projeto Oracle One na Alura,msmccldcm akmskmkdsc mksmdskxsm.</h3>
@@ -80,7 +88,7 @@ function App() {
               </li>
             </ul>
           </div>
-          {/* <img className=' rounded-full' src={Foto} /> */}
+          <img className=' rounded-full w-[350px] h-[350px]' src={Foto} />
         </div>
       </section>
 
@@ -315,27 +323,27 @@ function App() {
       {/* Sessão de Experiência Profissional/Projetos  */}
       <section>
         <div id='experiencia'>
-          <h2 className=' font-semibold text-secondary text-3xl my-8'>Experiência Prossional/Projetos</h2>
-          <div>
-            {/* Imagemm do projeto  */}
+          <h2 className=' font-semibold text-secondary text-3xl my-8'>Experiência Profissional/Projetos</h2>
+          {/* <div>
+            Imagemm do projeto
             <div>
               <h2>Protege Recife</h2>
               <h3>Projeto Integrador III - Unicap</h3>
               <div>
-                {/* <span><a href=""><button>Repositório</button></a></span> */}
-                {/* <span><a href=""><button>Ver demo</button></a></span> */}
+                <span><a href=""><button>Repositório</button></a></span>
+                <span><a href=""><button>Ver demo</button></a></span>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div>
-            {/* imagem do projeto  */}
-            <div>
-              <h2>Jogo criado com HTML, CSS e Javascript</h2>
-              <h3>Challenge Oracle</h3>
-              <div>
-                {/* <span><a href=""><button>Repositório</button></a></span> */}
-                {/* <span><a href=""><button>Ver demo</button></a></span> */}
+          <div className=' flex gap-8'>
+            <video width={"50%"} height={"100%"} src={video1} autoPlay loop />
+            <div className='flex flex-col justify-center text-start'>
+              <h1 className=' font-semibold text-secondary text-2xl'>Desejo Itens</h1>
+              <h3 className=''>Uma ferramenta para gerenciar pordutos que você deseja comprar. Adicione e remova itens facilmente. Desenvolvido com HTML, CSS, Javascript, Node.js e Baserow.</h3>
+              <div className='flex flex-row gap-4'>
+                <Button variant="outline" className="w-[50%]">Repositório</Button>
+                <Button className="w-[50%]">Ver Demo</Button>
               </div>
             </div>
           </div>
